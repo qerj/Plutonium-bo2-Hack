@@ -39,6 +39,10 @@ DWORD WINAPI Trainer(LPVOID param)
 			noHud = !noHud;
 		}
 
+		// no hud is a little broken as I didn't test this in anything else but single-player.
+		// if you have it enabled and get killed, a KILLCAM texture will overlap like your watching a killcam.
+		// if i find out how to make this a perm functionality I will add it but for no this is a broken hack
+		// aye but fov works though?
 		if (noHud) {
 			*noHudAddress = 0xC1;
 			*(noHudAddress + 1) = 0xE0;
